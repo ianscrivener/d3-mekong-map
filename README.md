@@ -1,6 +1,6 @@
-#**d3 Mekong Map**
+#**d3 Mekong Map**#
 
-This is a d3 map of 5 Lower Mekong countries. Heavily adapted from the great work of Mike Bostock, the developer of **d3.js** [https://github.com/mbostock](https://github.com/mbostock "").
+This is a d3 map of 5 Lower Mekong countries. Heavily adapted from the great work of Mike Bostock, the developer of ##d3.js## [https://github.com/mbostock](https://github.com/mbostock "").
 
 To reuse it with other countries simple grab the raw country & place data and extract/transform the spatial data for the countries you require.
 
@@ -8,7 +8,7 @@ To reuse it with other countries simple grab the raw country & place data and ex
 
 
 
-**Get the spatial data**
+##Get the spatial data##
 
 
 	mkdir downloads
@@ -22,20 +22,22 @@ To reuse it with other countries simple grab the raw country & place data and ex
 
 	cd ../
 
-**You need the GDLA applicaiton installed to use ogr2ogr**
+##You need the GDAL applicaiton installed to use ogr2ogr##
 
 	apt-get install -y gdal-bin
 
 
 node.js & topojson package
 
-		# you need to have node.js & npm installed already
+	# you need to have node.js & npm installed already
 	# then get to node.js package topojson
 	npm install -g topojson
 
 
 
-**Convert the shape file of the boundaries to a geojson**
+##Convert the shape file of the boundaries to a geojson##
+
+Use the 3 character country code (ISO 3166-1 Alpha-3) code for the countries you require - see [http://en.wikipedia.org/wiki/ISO_3166-1#Current_codes](http://en.wikipedia.org/wiki/ISO_3166-1#Current_codes "")
 
     ogr2ogr \
     	-f GeoJSON \
@@ -43,7 +45,8 @@ node.js & topojson package
     	subunits.json \
     	./downloads/ne_10m_admin_0_map_subunits.shp
 
-**Convert the shape file of places to a geojson**    
+##Convert the shape file of places to a geojson##    
+Using the two character codes 
 
     ogr2ogr \
     	-f GeoJSON \
@@ -51,7 +54,7 @@ node.js & topojson package
     	places.json \
     	./downloads/ne_10m_populated_places.shp
 
-**Merge the 2 geojson files and transform to topojson**   
+##Merge the 2 geojson files and transform to topojson##   
  
     topojson \
     	--id-property SU_A3 \
@@ -61,5 +64,5 @@ node.js & topojson package
     	subunits.json \
     	places.json
     	
-**For lazy people**
-The spatial-convert.sh shell script includes the following steps. Tweak the countries and 'SCALERANK' of the places as required.
+##For lazy people##
+The **spatial-convert.sh** shell script includes the following steps. Tweak the countries and 'SCALERANK' of the places as required.
