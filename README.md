@@ -1,6 +1,6 @@
 #**d3 Mekong Map**#
 
-This is a d3 map of 5 Lower Mekong countries. Heavily adapted from the great work of Mike Bostock, the developer of ##d3.js## [https://github.com/mbostock](https://github.com/mbostock "").
+This is a d3 map of 5 Lower Mekong countries. Heavily adapted from the great work of Mike Bostock, the developer of **d3.js** [https://github.com/mbostock](https://github.com/mbostock "").
 
 To reuse it with other countries simple grab the raw country & place data and extract/transform the spatial data for the countries you require.
 
