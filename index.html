@@ -1,9 +1,6 @@
-
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-
-    <style>
     .subunit.ddd { fill: #333; }
     .subunit.KHM { fill: #aaf; }
     .subunit.LAO { fill: #add; }
@@ -43,8 +40,6 @@
     }
 
 </style>
-
-</style>
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
@@ -66,9 +61,6 @@
             .attr("height", height);
 
     d3.json("mekong.json", function(error, myMap) {
-//        svg.append("path")
-//                .datum(topojson.feature(myMap, myMap.objects.subunits))
-//                .attr("d", d3.geo.path().projection(projection));
 
         svg.selectAll(".subunit")
             .data(topojson.feature(myMap, myMap.objects.subunits).features)
