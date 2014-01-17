@@ -8,7 +8,7 @@ To reuse it with other countries simple grab the raw country & place data and ex
 
 
 
-##Get the spatial data##
+##Get the spatial data
 
 
 	mkdir downloads
@@ -22,20 +22,20 @@ To reuse it with other countries simple grab the raw country & place data and ex
 
 	cd ../
 
-##You need the GDAL applicaiton installed to use ogr2ogr##
+##You need the GDAL application installed to use ogr2ogr
 
 	apt-get install -y gdal-bin
 
+##Load the topojson node.js module
 
-node.js & topojson package
+of course you need to have node.js & npm installed already
 
-	# you need to have node.js & npm installed already
 	# then get to node.js package topojson
 	npm install -g topojson
 
 
 
-##Convert the shape file of the boundaries to a geojson##
+##Convert the shape file of the boundaries to a geojson
 
 Use the 3 character country code (ISO 3166-1 Alpha-3) code for the countries you require - see [http://en.wikipedia.org/wiki/ISO_3166-1#Current_codes](http://en.wikipedia.org/wiki/ISO_3166-1#Current_codes "")
 
@@ -45,7 +45,7 @@ Use the 3 character country code (ISO 3166-1 Alpha-3) code for the countries you
     	subunits.json \
     	./downloads/ne_10m_admin_0_map_subunits.shp
 
-##Convert the shape file of places to a geojson##    
+##Convert the shape file of places to a geojson
 Using the two character codes 
 
     ogr2ogr \
@@ -54,7 +54,7 @@ Using the two character codes
     	places.json \
     	./downloads/ne_10m_populated_places.shp
 
-##Merge the 2 geojson files and transform to topojson##   
+##Merge the 2 geojson files and transform to topojson
  
     topojson \
     	--id-property SU_A3 \
@@ -64,5 +64,5 @@ Using the two character codes
     	subunits.json \
     	places.json
     	
-##For lazy people##
+##For lazy people
 The **spatial-convert.sh** shell script includes the following steps. Tweak the countries and 'SCALERANK' of the places as required.
